@@ -7,4 +7,12 @@ import com.demo.front.entity.ProductoEntity;
 public interface IProductoService {
 
 	List<ProductoEntity> getProduct();
+	
+	List<ProductoEntity> getProductBySucursal(Integer idSucursal);
+	
+	List<ProductoEntity> getProductByCategoria(Integer idCategoria);
+	
+	List<ProductoEntity> getProductBySubCategoria(Integer idSubCategoria);
+	
+	ProductoEntity getProductById(Integer codigo);
 }

@@ -52,5 +52,13 @@ public class ProductoEntity implements Serializable {
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idSucursal", referencedColumnName = "ID_SUCURSAL")
 	private SucursalEntity sucursal;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idCategoria", referencedColumnName = "ID_CATEGORIA")
+	private CategoriaEntity categoria;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idSubcategoria", referencedColumnName = "ID_SUBCATEGORIA")
+	private SubCategoriaEntity subcategoria;
 
 }
