@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.demo.front.config.ConfigValues;
 import com.demo.front.dto.ResponseDTO;
 import com.demo.front.service.IProductoService;
 
@@ -17,13 +18,16 @@ public class ProductoController {
 	
 	@Autowired
 	private IProductoService productoService;
+
+	@Autowired
+	private ConfigValues configValues;
 	
 	@GetMapping
 	public ResponseEntity<ResponseDTO> getAllCategoria(){
 		return new ResponseEntity<ResponseDTO>(
 				ResponseDTO
 				.builder()
-				.serviceName("Service music pro")
+				.serviceName(configValues.getNameService())
 				.status(true)
 				.data(productoService.getProduct())
 				.build()
@@ -35,7 +39,7 @@ public class ProductoController {
 		return new ResponseEntity<ResponseDTO>(
 				ResponseDTO
 				.builder()
-				.serviceName("Service music pro")
+				.serviceName(configValues.getNameService())
 				.status(true)
 				.data(productoService.getProductBySucursal(idSucursal))
 				.build()
@@ -47,7 +51,7 @@ public class ProductoController {
 		return new ResponseEntity<ResponseDTO>(
 				ResponseDTO
 				.builder()
-				.serviceName("Service music pro")
+				.serviceName(configValues.getNameService())
 				.status(true)
 				.data(productoService.getProductByCategoria(idCategoria))
 				.build()
@@ -59,7 +63,7 @@ public class ProductoController {
 		return new ResponseEntity<ResponseDTO>(
 				ResponseDTO
 				.builder()
-				.serviceName("Service music pro")
+				.serviceName(configValues.getNameService())
 				.status(true)
 				.data(productoService.getProductBySubCategoria(idSubcategoria))
 				.build()
