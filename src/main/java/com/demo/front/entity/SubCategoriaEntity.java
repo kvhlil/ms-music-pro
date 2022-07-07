@@ -32,4 +32,6 @@ public class SubCategoriaEntity implements Serializable{
 	@Column(name="DESCRIPCION")
 	private String descripcion;
 
+	@Column(name="URL")
+	private String url;
 }

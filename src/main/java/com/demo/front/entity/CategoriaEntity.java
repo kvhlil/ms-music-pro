@@ -31,5 +31,7 @@ public class CategoriaEntity implements Serializable {
 	
 	@Column(name="DESCRIPCION")
 	private String descripcion;
+	
+	
 
 }

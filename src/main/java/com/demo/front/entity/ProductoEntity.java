@@ -36,6 +36,9 @@ public class ProductoEntity implements Serializable {
 
 	@Column(name="NOMBRE")
 	private String nombre;
+	
+	@Column(name="URL")
+	private String url;
 
 	@Column(name="STOCK")
 	private Integer stock;
